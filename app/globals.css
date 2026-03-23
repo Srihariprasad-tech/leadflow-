@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #080c10;
+  --surface: #0d1318;
+  --surface2: #121920;
+  --border: #1e2d3a;
+  --accent: #00e5ff;
+  --accent2: #ff3d71;
+  --accent3: #ffaa00;
+  --hot: #ff3d71;
+  --warm: #ffaa00;
+  --cold: #4dd0e1;
+  --text: #cdd6e0;
+  --muted: #4a6070;
+  --mono: 'Space Mono', monospace;
+  --sans: 'Syne', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  min-height: 100vh;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-pulse-dot {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin 0.7s linear infinite;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
